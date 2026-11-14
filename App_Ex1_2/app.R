@@ -1,0 +1,37 @@
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    https://shiny.posit.co/
+#
+
+library(shiny)
+library(bslib)
+
+ui <- page_sidebar(
+  
+  title = "My Shiny App",
+  
+  # sidebar info
+  sidebar = sidebar(
+    "Shiny is available on CRAN, so you can install it in the usual way from your R console:",
+    code('install.packages("shiny")')
+  ),
+  
+  # main card
+  card(
+    card_header("Introducing Shiny"),
+    
+    "Shiny is a package from Posit that makes it incredibly easy to build interactive web applications with R. For an introduction and live examples, visit the Shiny homepage (https://shiny.posit.co).",
+    card_image("shiny.svg", height = "450px"),
+    card_footer("Shiny is a product of Posit.")
+  )
+)
+
+server <- function(input, output) {
+  
+}
+
+shinyApp(ui = ui, server = server)
